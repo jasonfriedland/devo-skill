@@ -2,7 +2,7 @@
 name: devo-research
 description: Research a codebase and gather implementation context for a development task. Use when you need to understand what exists before planning, investigate unfamiliar code, or produce a research report to hand off to a planning step.
 metadata:
-  author: jason-friedland
+  author: jasonfriedland
   version: "1.0"
 ---
 

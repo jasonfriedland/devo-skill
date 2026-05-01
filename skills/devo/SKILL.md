@@ -3,7 +3,7 @@ name: devo
 description: Development Orchestrator — drives a feature request to a fully validated implementation through five phases: clarify, research, plan, execute, and validate. Activate when asked to implement a feature, build a component, fix a bug end-to-end, or complete any development task from requirement to working code.
 compatibility: Requires an agent that can spawn isolated sub-agents or delegate to focused sub-contexts. Each phase runs as a separate sub-agent. Compatible with Claude Code, Gemini CLI, OpenCode, and other agents with sub-agent delegation support.
 metadata:
-  author: jason-friedland
+  author: jasonfriedland
   version: "1.0"
 ---
 

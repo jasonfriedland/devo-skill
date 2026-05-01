@@ -2,7 +2,7 @@
 name: devo-execute
 description: Implement a development plan by writing code, running commands, and modifying files. Use when you have a concrete implementation plan and are ready to execute it.
 metadata:
-  author: jason-friedland
+  author: jasonfriedland
   version: "1.0"
 ---
 

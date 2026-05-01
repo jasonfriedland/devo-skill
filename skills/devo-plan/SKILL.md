@@ -2,7 +2,7 @@
 name: devo-plan
 description: Produce a detailed implementation plan for a development task. Use when you have a feature or fix to implement and want a structured, step-by-step plan before writing any code.
 metadata:
-  author: jason-friedland
+  author: jasonfriedland
   version: "1.0"
 ---
 

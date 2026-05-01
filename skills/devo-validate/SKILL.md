@@ -2,7 +2,7 @@
 name: devo-validate
 description: Validate an implementation against acceptance criteria by running tests and evaluating each criterion explicitly. Use after implementation to verify that a feature or fix meets its requirements.
 metadata:
-  author: jason-friedland
+  author: jasonfriedland
   version: "1.0"
 ---
 
