@@ -1,0 +1,52 @@
+name: Validate install
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install skill to temporary destination
+        run: make install DEST="$RUNNER_TEMP/devo-skills"
+
+      - name: Assert installed files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          install_root="$RUNNER_TEMP/devo-skills"
+
+          test -d "$install_root/devo"
+          test -f "$install_root/devo/SKILL.md"
+          test -d "$install_root/devo/references"
+
+          test ! -e "$install_root/devo-research"
+          test ! -e "$install_root/devo-plan"
+          test ! -e "$install_root/devo-execute"
+          test ! -e "$install_root/devo-validate"
+
+          (
+            cd "$install_root"
+            find . -type f | sed 's#^\./##' | sort
+          ) > actual-files.txt
+
+          printf '%s\n' \
+            'devo/SKILL.md' \
+            'devo/references/phase-execute.prompt' \
+            'devo/references/phase-plan.prompt' \
+            'devo/references/phase-research.prompt' \
+            'devo/references/phase-validate.prompt' \
+            > expected-files.txt
+
+          diff -u expected-files.txt actual-files.txt
+
+          while IFS= read -r path; do
+            cmp "skills/$path" "$install_root/$path"
+          done < expected-files.txt
