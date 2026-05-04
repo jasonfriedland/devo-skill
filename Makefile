@@ -1,6 +1,6 @@
 SKILLS_DIR  := skills
 GLOBAL_DIR  := $(HOME)/.agents/skills
-SKILL_DIRS  := $(wildcard $(SKILLS_DIR)/devo*)
+SKILL_DIRS  := $(SKILLS_DIR)/devo
 SKILL_NAMES := $(notdir $(SKILL_DIRS))
 
 # Override install destination: make install DEST=/custom/path
@@ -12,9 +12,9 @@ DEST ?= $(GLOBAL_DIR)
 help:
 	@echo "Usage: make <target>"
 	@echo ""
-	@echo "  install            Install all skills to $(GLOBAL_DIR)"
-	@echo "  install-project    Install all skills to .agents/skills/ in the current directory"
-	@echo "  install DEST=X     Install all skills to a custom path"
+	@echo "  install            Install the devo skill to $(GLOBAL_DIR)"
+	@echo "  install-project    Install the devo skill to .agents/skills/ in the current directory"
+	@echo "  install DEST=X     Install the devo skill to a custom path"
 	@echo "  uninstall          Remove skills from $(GLOBAL_DIR)"
 	@echo "  uninstall DEST=X   Remove skills from a custom path"
 	@echo "  uninstall-project  Remove skills from .agents/skills/"

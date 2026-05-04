@@ -1,20 +1,16 @@
 # devo-skill
 
-A set of agent skills that drive a development request from idea to validated implementation using isolated sub-agents for each phase.
+An agent skill that drives a development request from idea to validated implementation using isolated sub-agents for each phase.
 
 Skills follow the [Agent Skills](https://agentskills.io) open format and work with any compatible agent — Claude Code, Gemini CLI, VS Code Copilot, OpenCode, and others.
 
 ---
 
-## Skills
+## Skill
 
-| Skill | Role | Use standalone when... |
+| Skill | Role | Use when... |
 |---|---|---|
 | `devo` | Full workflow orchestrator | Building or fixing something end-to-end |
-| `devo-research` | Codebase research | You need context before planning |
-| `devo-plan` | Implementation planning | You have a task and want a concrete plan |
-| `devo-execute` | Code implementation | You have a plan and are ready to execute |
-| `devo-validate` | Test & validate | You want to verify criteria after implementation |
 
 ---
 
@@ -82,14 +78,6 @@ skills/
       phase-plan.prompt            # Planning sub-agent prompt template
       phase-execute.prompt         # Execution sub-agent prompt template
       phase-validate.prompt        # Validation sub-agent prompt template
-  devo-research/
-    SKILL.md                       # Standalone research skill
-  devo-plan/
-    SKILL.md                       # Standalone planning skill
-  devo-execute/
-    SKILL.md                       # Standalone execution skill
-  devo-validate/
-    SKILL.md                       # Standalone validation skill
 
 Makefile                           # Install / uninstall / validate targets
 ```
