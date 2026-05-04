@@ -6,14 +6,6 @@ Skills follow the [Agent Skills](https://agentskills.io) open format and work wi
 
 ---
 
-## Skill
-
-| Skill | Role | Use when... |
-|---|---|---|
-| `devo` | Full workflow orchestrator | Building or fixing something end-to-end |
-
----
-
 ## How `devo` works
 
 `devo` orchestrates five phases, spawning an isolated sub-agent for each:
