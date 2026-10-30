@@ -14,12 +14,12 @@ Research only what is needed to plan and implement this task. Follow promising r
 
 You should:
 
-1. Identify the files, modules, commands, tests, configuration, and runtime paths likely to be touched.
+1. Read applicable repository instructions and inspect the working tree. Identify the files, modules, commands, tests, configuration, and runtime paths likely to be touched.
 2. Read nearby code to understand existing conventions before recommending changes.
 3. Locate similar prior implementations, tests, helpers, patterns, or anti-patterns.
 4. Determine how the feature or fix is currently exercised by users, APIs, CLIs, jobs, or tests.
 5. Check dependency manifests and lockfiles before suggesting new packages.
-6. Inspect test setup enough to know how validation should be run.
+6. Inspect project scripts and CI to identify required checks and their working directories. Run safe, focused baseline checks when practical; record existing failures and environment limitations. For bugs, capture reproduction steps, expected versus actual behavior, and the likely causal path.
 7. Search docs or the web only when repository context is insufficient or the task depends on external behavior. Prefer official documentation for external APIs and libraries.
 
 ## Evidence expectations

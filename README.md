@@ -1,6 +1,6 @@
 # devo-skill
 
-An agent skill that drives a development request from idea to validated implementation using isolated sub-agents for each phase.
+An agent skill that drives a development request from idea to validated implementation using focused phases and sub-agents where available.
 
 Skills follow the [Agent Skills](https://agentskills.io) open format and work with any compatible agent — Claude Code, Gemini CLI, VS Code Copilot, OpenCode, and others.
 
@@ -8,21 +8,21 @@ Skills follow the [Agent Skills](https://agentskills.io) open format and work wi
 
 ## How `devo` works
 
-`devo` orchestrates five phases, spawning an isolated sub-agent for each:
+`devo` orchestrates five phases, delegating focused work when available and permitted. It can also run in a single agent, and scales down for small edits:
 
 ```
-Phase 0 — Clarify    (interactive)   →  Session Brief
+Phase 0 — Clarify    (orchestrator)   →  Session Brief
 Phase 1 — Research   (sub-agent)     →  Research Report
-Phase 2 — Plan       (sub-agent)     →  Implementation Plan  ← user checkpoint
+Phase 2 — Plan       (sub-agent)     →  Implementation Plan  ← checkpoint if requested
 Phase 3 — Execute    (sub-agent)     →  Execution Report
 Phase 4 — Validate   (sub-agent)     →  Validation Report
 ```
 
-1. **Clarify** — asks targeted questions to produce a Session Brief with acceptance criteria
-2. **Research** — surveys the codebase; produces a Research Report summarising relevant files, conventions, and risks
-3. **Plan** — turns the brief and research into a task-by-task Implementation Plan; requires explicit user approval before proceeding
-4. **Execute** — implements the plan; produces an Execution Report noting deviations
-5. **Validate** — runs tests and evaluates each acceptance criterion; retries up to 3 times on failure before escalating
+1. **Clarify** — establishes observable acceptance criteria; asks only about material missing decisions
+2. **Research** — inspects relevant code, repository instructions, reproduction steps, and baseline checks
+3. **Plan** — maps requirements to changes and verification; pauses for approval when the user requests it or a consequential decision needs input
+4. **Execute** — implements small coherent changes, preserves user work, and checks regressions
+5. **Validate** — reviews the diff and verifies each criterion with evidence; distinguishes defects from blocked checks and allows up to three validation cycles for automatic fixes
 
 ---
 
